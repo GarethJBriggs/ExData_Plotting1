@@ -17,6 +17,8 @@
         hpc_df$Datetime <- dmy_hms(paste(hpc_df$Date, hpc_df$Time))
         ## remove Date and Time columns
         hpc_df <- hpc_df[,3:9]
+        ## set up the png
+        png(filename = "plot3.png")
         ## set margin parameters
         par(mfrow = c(1,1), mar = c(3,4,0,2))
         ## plot the data
@@ -31,7 +33,6 @@
         ## add legend
         legend("topright", col = c("black", "red", "blue"), lty = 1,
                 legend = c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"))
-        dev.copy(png, file = "plot3.png")
         ## reset devices
         dev.off()
         

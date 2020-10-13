@@ -1,4 +1,5 @@
         library(lubridate)
+        library(png)
         ## read household_power_consumption.txt for specified dates
         hpc_df <- read.table(file = "household_power_consumption.txt", header 
                 = FALSE, sep = ";", skip = 66637, nrows = 2880,
@@ -17,6 +18,8 @@
         hpc_df$Datetime <- dmy_hms(paste(hpc_df$Date, hpc_df$Time))
         ## remove Date and Time columns
         hpc_df <- hpc_df[,3:9]
+        ## set up the png
+        png(filename = "plot4.png")
         ##set the parameters
         par(mfrow = c(2,2), mar = c(4,4,0,2))
         ## plot Global_active_power data
@@ -37,10 +40,9 @@
         ## add legend
         legend("topright", col = c("black", "red", "blue"), lty = 1,
                legend = c("Sub_metering_1", "Sub_metering_2","Sub_metering_3"),
-               bty = "n", cex = 1.6, lwd = 2)
+               bty = "n", cex = 0.90, lwd = 2)
         ## plot Global_Reactive_power data
         with(hpc_df, plot(Datetime, Global_reactive_power, xlab = "datetime", 
                           ylab = "Global_reactive_power" , type = "l" ))
-        dev.copy(png, file = "plot4.png")
         ## reset devices
         dev.off()
