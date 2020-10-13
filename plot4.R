@@ -21,7 +21,7 @@
         ## set up the png
         png(filename = "plot4.png")
         ##set the parameters
-        par(mfrow = c(2,2), mar = c(4,4,0,2))
+        par(mfrow = c(2,2), mar = c(6,4,0,2))
         ## plot Global_active_power data
         with(hpc_df, plot(Datetime, Global_active_power, xlab = " ", ylab = 
                                   "Global Active Power" , type = "l" ))
