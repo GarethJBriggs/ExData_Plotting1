@@ -23,7 +23,7 @@
         ## plot data
         with(hpc_df, plot(Datetime, Global_active_power, xlab = " ", ylab = 
                 "Global Active Power (kilowatts)" , type = "l" ))
-        ##copy to PNG file
+        ## copy to PNG file
          dev.copy(png, file = "plot2.png")
         ## reset devices
         dev.off()

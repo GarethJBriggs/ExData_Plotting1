@@ -23,7 +23,7 @@
         hist(hpc_df$Global_active_power, col = "red", xlab = 
                  "Global Active Power (kilowatts)", ylab = "Frequency",
                 main = "Global Active Power") 
-        ##copy to PNG file
+        ## copy to PNG file
         dev.copy(png, file = "plot1.png")
         ## reset devices
         dev.off()
