@@ -1,5 +1,5 @@
         library(lubridate)
-        ## generates a histogram of GLobal Active Power
+        ## generates a histogram of Global Active Power
         ## read household_power_consumption.txt for specified dates
         hpc_df <- read.table(file = "household_power_consumption.txt", header 
                 = FALSE, sep = ";", skip = 66637, nrows = 2880,
