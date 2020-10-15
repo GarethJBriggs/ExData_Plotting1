@@ -1,4 +1,5 @@
         library(lubridate)
+        ## generates a plot of Datetime vs Global Active Power
         ## read household_power_consumption.txt for specified dates
         hpc_df <- read.table(file = "household_power_consumption.txt", header 
                 = FALSE, sep = ";", skip = 66637, nrows = 2880,
@@ -22,6 +23,7 @@
         ## plot data
         with(hpc_df, plot(Datetime, Global_active_power, xlab = " ", ylab = 
                 "Global Active Power (kilowatts)" , type = "l" ))
-        dev.copy(png, file = "plot2.png")
+        ##copy to PNG file
+         dev.copy(png, file = "plot2.png")
         ## reset devices
         dev.off()

@@ -1,4 +1,5 @@
         library(lubridate)
+        ## generates a histogram of GLobal Active Power
         ## read household_power_consumption.txt for specified dates
         hpc_df <- read.table(file = "household_power_consumption.txt", header 
                 = FALSE, sep = ";", skip = 66637, nrows = 2880,
@@ -22,7 +23,7 @@
         hist(hpc_df$Global_active_power, col = "red", xlab = 
                  "Global Active Power (kilowatts)", ylab = "Frequency",
                 main = "Global Active Power") 
-        ##write to PNG
+        ##copy to PNG file
         dev.copy(png, file = "plot1.png")
         ## reset devices
         dev.off()

@@ -1,5 +1,6 @@
         library(lubridate)
         library(png)
+        ## generates a 2x2 plot of household power consumption data
         ## read household_power_consumption.txt for specified dates
         hpc_df <- read.table(file = "household_power_consumption.txt", header 
                 = FALSE, sep = ";", skip = 66637, nrows = 2880,
@@ -18,7 +19,7 @@
         hpc_df$Datetime <- dmy_hms(paste(hpc_df$Date, hpc_df$Time))
         ## remove Date and Time columns
         hpc_df <- hpc_df[,3:9]
-        ## set up the png
+        ## set up the png file
         png(filename = "plot4.png")
         ##set the parameters
         par(mfrow = c(2,2), mar = c(6,4,0,2))
